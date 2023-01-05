@@ -1,7 +1,18 @@
 import ResponsiveAppBar from "../components/RespnsiveAppBar";
 import Card from "../components/Card";
+import { useState } from "react";
 
 const User = () => {
+  const [data, setData] = useState([1,1,1]);
+  const [upload, setUpload] = useState([1,1,1]);
+  const [like, setLike] = useState([1,1,1]);
+
+  const showMore = (type) => {
+    if(type === 'f') setData([...data, 1,2,3]);
+    else if(type === 'u') setUpload([...upload, 1,2,3]);
+    else if(type === 'l') setLike([...like, 1,2,3]);
+  }
+
   return (
     <>
       <ResponsiveAppBar></ResponsiveAppBar>
@@ -30,46 +41,61 @@ const User = () => {
           </div>
         </div>
       </div>
-      <div className="text-4xl">
+      <div className="text-4xl pb-8">
         Featured
-        <div className="flex p-4 pb-3.5 px-4 flex-wrap justify-center">
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
+        <div className="grid grid-cols-3 m-auto max-w-fit p-4 pb-3.5 px-4">
+                {
+                  data.map(item => {
+                    return (
+                      <div className="p-4 pb-3.5 px-4">
+                        <Card />
+                      </div>
+                    )
+                  })
+                }
+        </div>
+        <div className="text-sm">
+          <button onClick={() => showMore("f")}>
+            See more...
+          </button>
         </div>
       </div>
-      <div className="text-4xl">
+      <div className="text-4xl pb-8">
         Uploads
-        <div className="flex p-4 pb-3.5 px-4 flex-wrap justify-center">
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
+        <div className="grid grid-cols-3 m-auto max-w-fit p-4 pb-3.5 px-4">
+                {
+                  upload.map(item => {
+                    return (
+                      <div className="p-4 pb-3.5 px-4">
+                        <Card />
+                      </div>
+                    )
+                  })
+                }
+        </div>
+        <div className="text-sm">
+          <button onClick={() => showMore("u")}>
+            See more...
+          </button>
         </div>
       </div>
-      <div className="text-4xl">
+      <div className="text-4xl pb-8">
         Liked
-        <div className="flex p-4 pb-3.5 px-4 flex-wrap justify-center">
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
-                <div className="p-4 pb-3.5 px-4">
-                    <Card />
-                </div>
+        <div className="grid grid-cols-3 m-auto max-w-fit p-4 pb-3.5 px-4">
+                {
+                  like.map(item => {
+                    return (
+                      <div className="p-4 pb-3.5 px-4">
+                        <Card />
+                      </div>
+                    )
+                  })
+                }
+        </div>
+        <div className="text-sm">
+          <button onClick={() => showMore("l")}>
+            See more...
+          </button>
         </div>
       </div>
     </>
