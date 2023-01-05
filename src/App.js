@@ -10,7 +10,7 @@ const Explore = lazy(() => import('./pages/Explore'));
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-slate-800">
       <Suspense>
         <Routes>
           <Route path="/" element={<Home />} />

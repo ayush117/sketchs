@@ -1,6 +1,6 @@
 const Card = () => {
   return (
-      <div className="rounded-none shadow-lg bg-white max-w-xs">
+      <div className="p-4 pb-3.5 px-4 rounded-none shadow-lg bg-white max-w-xs">
         <div className="justify-center">
           <img
             className="rounded-r-xs"
