@@ -10,17 +10,19 @@ const Login = (props) => {
   let navigate = useNavigate();
   const { loginState, loginDispatch } = useCustomContext();
   return (
-    <div className="App">
-      <h1>LOGIN WITH FACEBOOK AND GOOGLE</h1>
+    <div className=" bg-white justify-center">
+      <div>
+        <h1>LOGIN WITH FACEBOOK AND GOOGLE</h1>
+      </div>
+
       {/* <FacebookLogin
         appId="" //APP ID NOT CREATED YET
         fields="name,email,picture"
-        callback={responseFacebook}
+        callback={() => console.log("responseFacebook")}
       /> */}
-      <br />
-      <br />
-
+      <div className="flex rounded-lg py-4 px-4 bg-sky-600 justify-center mx-80 my-40">
         <GoogleLogin
+          text="sign in with Google"
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse);
             loginDispatch({type: "login_success"})
@@ -30,7 +32,7 @@ const Login = (props) => {
             console.log("Login Failed");
           }}
         />
-      
+      </div>
     </div>
   );
 };
