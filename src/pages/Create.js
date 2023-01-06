@@ -15,7 +15,7 @@ const Create = () => {
                 <div className="basis-2/4 flex flex-col pl-4">
                     <TitleDesc />
                     <PromptInvokes />
-                    <span className="font-bold text-xl text-white pb-5">Genrated By:
+                    <span className="font-bold text-xl text-white pb-5 text-left">Genrated By:
                         <select className="text-black font-normal text-lg ml-5 px-5">
                             <option>1</option>
                             <option>2</option>
