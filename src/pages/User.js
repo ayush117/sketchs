@@ -41,8 +41,10 @@ const User = () => {
           </div>
         </div>
       </div>
-      <div className="text-4xl pb-8">
-        Featured
+      <div className="pb-8">
+        <div className="text-4xl">
+          Featured
+        </div>
         <div className="grid grid-cols-3 m-auto max-w-fit p-4 pb-3.5 px-4">
                 {
                   data.map(item => {
@@ -60,8 +62,10 @@ const User = () => {
           </button>
         </div>
       </div>
-      <div className="text-4xl pb-8">
-        Uploads
+      <div className="pb-8">
+        <div className="text-4xl">
+          Uploads
+        </div>
         <div className="grid grid-cols-3 m-auto max-w-fit p-4 pb-3.5 px-4">
                 {
                   upload.map(item => {
@@ -79,8 +83,10 @@ const User = () => {
           </button>
         </div>
       </div>
-      <div className="text-4xl pb-8">
-        Liked
+      <div className="pb-8">
+        <div className="text-4xl">
+          Liked
+        </div>
         <div className="grid grid-cols-3 m-auto max-w-fit p-4 pb-3.5 px-4">
                 {
                   like.map(item => {
