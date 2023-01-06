@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
+// import FacebookLogin from "react-facebook-login";
+// import GoogleLogin from 'react-google-login';
 import { GoogleLogin } from "@react-oauth/google";
+import { useCustomContext } from "../utils/CustomContext";
+import ResponsiveAppBar from "../components/RespnsiveAppBar";
 import React, { useState } from 'react';
-// import axios from 'axios';
 
-const Login = () => {
+const Login = (props) => {
   let navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -31,7 +34,10 @@ const Login = () => {
     }
   };
 
+  const { loginState, loginDispatch } = useCustomContext();
+
   return (
+    <>
     <div className="container mx-auto max-w-md px-4 py-8">
       <h1 className="text-3xl font-bold mb-4">Login</h1>
       <form
@@ -77,13 +83,14 @@ const Login = () => {
           >
             Sign In
           </button>
-        </div>
+          </div>
         <div className="flex rounded-lg py-4 px-4 justify-center">
         <GoogleLogin
           text="sign in with Google"
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse);
-            navigate("/home");
+            loginDispatch({type: "login_success"})
+            navigate('/');
           }}
           onError={() => {
             console.log("Login Failed");
@@ -92,6 +99,7 @@ const Login = () => {
       </div>
       </form>
     </div>
+    </>
   );
 };
 
