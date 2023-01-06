@@ -1,6 +1,6 @@
 const Card = () => {
   return <>
-      <div className="card flex flex-col border-2 border-black p-4" style={{flexBasis: "32%"}}>
+      <div className="card flex flex-col border-2 border-black p-4 mb-2" style={{flexBasis: "32%"}}>
           <div className="image flex justify-center pb-2">
               <img src="/images/dummy.png" alt="dummy"></img>
           </div>
