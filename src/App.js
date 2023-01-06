@@ -22,9 +22,8 @@ function App() {
     loginDispatch
   }
   return (
-    <div className="App h-screen bg-slate-800">
+    <div className="App h-full bg-slate-800">
       <CustomContext.Provider value={providerState} >
-
         <Suspense>
           <Routes>
             <Route path="/" element={<Home />} />

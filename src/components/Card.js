@@ -1,12 +1,12 @@
 const Card = () => {
   return <>
-      <div className="card flex flex-col border-2 border-black p-4 mb-2" style={{flexBasis: "32%"}}>
-          <div className="image flex justify-center pb-2">
-              <img src="/images/dummy.png" alt="dummy"></img>
+      <div className="card flex flex-col overflow-hidden shadow-xl rounded-lg bg-slate-700 p-4 mb-2" style={{flexBasis: "32%"}}>
+          <div className="image rounded-sm flex justify-center pb-2">
+              <img className="rounded-lg" src="/images/dummy.png" alt="dummy"></img>
           </div>
           <div className="card-info flex flex-col">
               <div className="flex justify-between">
-                  <div>
+                  <div className="font-bold text-base">
                       Title
                   </div>
                   <div className="inline-flex">
