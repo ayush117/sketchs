@@ -5,11 +5,14 @@ import { useNavigate } from "react-router-dom";
 // import GoogleLogin from 'react-google-login';
 import { GoogleLogin } from "@react-oauth/google";
 import { useCustomContext } from "../utils/CustomContext";
+import ResponsiveAppBar from "../components/RespnsiveAppBar";
 
 const Login = (props) => {
   let navigate = useNavigate();
   const { loginState, loginDispatch } = useCustomContext();
   return (
+    <>
+    <ResponsiveAppBar />
     <div className=" bg-white justify-center">
       <div>
         <h1>LOGIN WITH FACEBOOK AND GOOGLE</h1>
@@ -34,6 +37,7 @@ const Login = (props) => {
         />
       </div>
     </div>
+    </>
   );
 };
 
