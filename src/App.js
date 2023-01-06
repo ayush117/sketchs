@@ -13,7 +13,7 @@ const Login = lazy(() => import('./pages/Login'));
 
 function App() {
   return (
-    <div className="App bg-slate-800">
+    <div className="App h-screen bg-slate-800">
       <Suspense>
         <Routes>
           <Route path="/" element={<Login />} />
