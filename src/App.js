@@ -8,13 +8,15 @@ const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Create = lazy(() => import('./pages/Create'));
 const Explore = lazy(() => import('./pages/Explore'));
 const User = lazy(() => import('./pages/User'));
+const Login = lazy(() => import('./pages/Login'));
 
 function App() {
   return (
     <div className="App bg-slate-800">
       <Suspense>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/create" element={<Create />} />
@@ -23,6 +25,7 @@ function App() {
         </Routes>
       </Suspense>
     </div>
+    
   );
 }
 
