@@ -1,6 +1,9 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import './App.css';
+import CustomContext from "./utils/CustomContext";
+import { LoginReducer } from "./utils/LoginReducer";
+import PrivateRoute from "./utils/PrivateRoute";
 
 const Home = lazy(() => import('./pages/Home'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -12,22 +15,51 @@ const Asset = lazy(() => import('./pages/Asset'));
 const Login = lazy(() => import('./pages/Login'));
 
 function App() {
+  const [loginState, loginDispatch] = React.useReducer(LoginReducer, { login: false });
+
+  const providerState = {
+    loginState,
+    loginDispatch
+  }
   return (
     <div className="App h-screen bg-slate-800">
-      <Suspense>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/asset" element={<Asset />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+      <CustomContext.Provider value={providerState} >
+
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/aboutus" element={
+              <PrivateRoute >
+                <AboutUs />
+              </PrivateRoute>
+            } />
+            <Route path="/explore" element={
+              <PrivateRoute >
+                <Explore />
+              </PrivateRoute>
+            } />
+            <Route path="/create" element={
+              <PrivateRoute >
+                <Create />
+              </PrivateRoute>
+            } />
+            <Route path="/user" element={
+              <PrivateRoute >
+                <User />
+              </PrivateRoute>
+            } />
+            <Route path="/asset" element={
+              <PrivateRoute >
+                <Asset />
+              </PrivateRoute>
+            } />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </CustomContext.Provider>
     </div>
-    
+
   );
 }
 
