@@ -32,7 +32,7 @@ const User = () => {
             </h1>
           </div>
           <div>
-            <p className="text-left xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7">
+            <p className="text-left xl:pr-48 text-base lg:leading-tight leading-normal text-white mt-7">
               It is a long established fact that a reader will be distracted by
               thereadable content of a page when looking at its layout. The
               point of usingLorem Ipsum is that it has a more-or-less normal

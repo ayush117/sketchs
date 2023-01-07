@@ -27,7 +27,7 @@ const Create = () => {
             </div>
             <button className="my-5 text-white bg-purple-900 px-5 py-2 rounded border-2 border-white hover:bg-purple-700 hover:text-black hover:border-black">Submit</button>
             <OtherResults />
-            <div className="cards flex justify-between pt-5">
+            <div className="cards flex justify-between pt-5 px-10">
                 <Card />
                 <Card />
                 <Card />

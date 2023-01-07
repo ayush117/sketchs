@@ -23,7 +23,7 @@ const Home = () => {
                     <div className='title text-5xl pb-5 text-left'>
                         Top Cited
                     </div>
-                    <div className='cards flex justify-between'>
+                    <div className='cards flex justify-between px-10'>
                         <Card />
                         <Card />
                         <Card />
@@ -33,7 +33,7 @@ const Home = () => {
                     <div className='title text-5xl pb-5 text-left'>
                         Most Liked
                     </div>
-                    <div className='cards flex justify-between'>
+                    <div className='cards flex justify-between px-10'>
                         <Card />
                         <Card />
                         <Card />

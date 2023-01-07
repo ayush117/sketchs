@@ -41,7 +41,7 @@ const Asset = () => {
             </div>
             <div>
                 <div className="title text-5xl pb-5 text-center pt-5">SIMILAR</div>
-                <div className="cards flex justify-between pt-5 flex-wrap">
+                <div className="cards flex justify-between pt-5 flex-wrap px-10">
                     {cardArray}
                 </div>
                 <div className="text-white text-center pt-5">
